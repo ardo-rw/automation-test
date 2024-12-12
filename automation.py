@@ -1,10 +1,13 @@
+import sys
 import requests
 import json
 import os
+from dotenv import load_dotenv
 
-POSTMAN_API_KEY = "PMAK-675a60ce6a064600016a49eb-e62c6acd2e2ad80dc12e7beff126555800"
-COLLECTION_UID = "28024806-9b30e18b-0b21-48fd-a72f-b372bbd34626"
-GIT_REPO_PATH = "https://github.com/ardo-rw/automation-test.git"
+load_dotenv()
+POSTMAN_API_KEY = os.environ.get('POSTMAN_API_KEY')
+COLLECTION_UID = "28024806-64d66bc3-a56b-44f9-a9bd-625425ca533d"
+GIT_REPO_PATH = os.getcwd()
 COLLECTION_FILE = os.path.join(GIT_REPO_PATH, "collection.json")
 
 # Fetch the collection from Postman
@@ -36,6 +39,14 @@ def update_collection():
 
 # Example usage
 if __name__ == "__main__":
-    # Uncomment the action you want to perform
-    # fetch_collection()
-    update_collection()
+    if len(sys.argv) != 2:
+        print("Usage: python script_name.py [fetch|update]")
+        sys.exit(1)
+
+    command = sys.argv[1].lower()
+    if command == "fetch":
+        fetch_collection()
+    elif command == "update":
+        update_collection()
+    else:
+        print("Invalid command. Use 'fetch' to fetch the collection or 'update' to update it.")
