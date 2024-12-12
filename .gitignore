@@ -4,3 +4,4 @@ lib
 pyvenv.cfg
 .idea
 .env
+newman
