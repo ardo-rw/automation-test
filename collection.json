@@ -1,0 +1,75 @@
+{
+    "collection": {
+        "info": {
+            "_postman_id": "9b30e18b-0b21-48fd-a72f-b372bbd34626",
+            "name": "AUTOMATION TEST - MIDDLEWARE",
+            "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+            "updatedAt": "2024-12-12T03:58:20.000Z",
+            "createdAt": "2024-12-12T03:54:54.000Z",
+            "lastUpdatedBy": "28024806",
+            "uid": "28024806-9b30e18b-0b21-48fd-a72f-b372bbd34626"
+        },
+        "item": [
+            {
+                "name": "Registration New",
+                "event": [
+                    {
+                        "listen": "test",
+                        "script": {
+                            "id": "9ab70a4c-8f1f-4b34-b107-1ca4e1d5b29a",
+                            "exec": [
+                                ""
+                            ],
+                            "type": "text/javascript",
+                            "packages": {}
+                        }
+                    },
+                    {
+                        "listen": "prerequest",
+                        "script": {
+                            "id": "f8df1445-bbee-4bcd-94d2-ae2ffbfb8e4a",
+                            "exec": [
+                                ""
+                            ],
+                            "type": "text/javascript",
+                            "packages": {}
+                        }
+                    }
+                ],
+                "id": "fcca7b42-6821-4050-b03d-6dd34c7d9b8f",
+                "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                },
+                "request": {
+                    "method": "POST",
+                    "header": [],
+                    "body": {
+                        "mode": "raw",
+                        "raw": "{\n    \"customerExternalId\": \"test-verify\",\n    \"partnerReferenceNo\": \"test-verify\",\n    \"riskProfile\": \"1\",\n    \"kyc\": {\n        \"educationBackground\": \"OTH\",\n        \"occupation\": \"5\",\n        \"annualIncome\": \"1\",\n        \"gender\": \"ML\",\n        \"idNumber\": \"test-verify\",\n        \"birthDate\": \"1988-10-23\",\n        \"religion\": \"MSLM\",\n        \"birthPlace\": \"JAKARTA\",\n        \"nationality\": \"ID\",\n        \"statementType\": \"E-statement\",\n        \"settlementAccountNo\": \"8844087770083299\",\n        \"name\": \"Testing Client Code 2\",\n        \"legal\": {\n            \"country\": \"ID\",\n            \"address\": \"JL WARUNG JATI TIMUR II 30 RT 006 RW 004\\nKALIBATA\",\n            \"province\": \"ID-JK\",\n            \"city\": \"3171\",\n            \"postalCode\": \"11111\"\n        },\n        \"settlementBankBIC\": \"SBJKIDJAXXX\",\n        \"incomeSource\": \"1\",\n        \"settlementAccountName\": \"testing purpose 2\",\n        \"investmentPurpose\": \"5\",\n        \"settlementBankCountry\": \"ID\",\n        \"email\": \"testing.middleware.reject@gmail.com\",\n        \"maritalStatus\": \"MRD\",\n        \"settlementBank\": \"BANK SINARMAS, PT, TBK\"\n    }\n}",
+                        "options": {
+                            "raw": {
+                                "language": "json"
+                            }
+                        }
+                    },
+                    "url": {
+                        "raw": "https://apigw-stg.star-am.com/middleware/registration/new",
+                        "protocol": "https",
+                        "host": [
+                            "apigw-stg",
+                            "star-am",
+                            "com"
+                        ],
+                        "path": [
+                            "middleware",
+                            "registration",
+                            "new"
+                        ]
+                    }
+                },
+                "response": [],
+                "uid": "28024806-fcca7b42-6821-4050-b03d-6dd34c7d9b8f"
+            }
+        ]
+    }
+}
