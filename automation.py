@@ -6,11 +6,11 @@ from dotenv import load_dotenv
 
 load_dotenv()
 POSTMAN_API_KEY = os.environ.get('POSTMAN_API_KEY')
-COLLECTION_UID = "28024806-64d66bc3-a56b-44f9-a9bd-625425ca533d"
+COLLECTION_UID = os.environ.get('COLLECTION_UID')
 GIT_REPO_PATH = os.getcwd()
 COLLECTION_FILE = os.path.join(GIT_REPO_PATH, "collection.json")
 
-# Fetch the collection from Postman
+# Fetch the collection from your Postman to this Git Repository
 def fetch_collection():
     url = f"https://api.getpostman.com/collections/{COLLECTION_UID}"
     headers = {"X-API-Key": POSTMAN_API_KEY}
@@ -22,7 +22,7 @@ def fetch_collection():
     else:
         print(f"Failed to fetch collection: {response.status_code} {response.text}")
 
-# Update the collection in Postman
+# Update the collection to your Postman from this Git Repository
 def update_collection():
     url = f"https://api.getpostman.com/collections/{COLLECTION_UID}"
     headers = {
